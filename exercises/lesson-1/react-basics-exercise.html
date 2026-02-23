@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>React Basics Exercise</title>
+    </head>
+    <body>
+        <div class="react-app"></div>
+
+        <script src="https://unpkg.com/supersimpledev/react.js"></script>
+        <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+        <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+
+        <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+        <script type="text/babel">
+            const day = dayjs().format('MMMM-D');
+            console.log(day);
+
+            let time = dayjs().format('HH:mm:ss');
+
+            const productCost = 10 * 1 + 8 * 2;
+            console.log(productCost);
+
+            const shippingCost = 5;
+
+            const container = document.querySelector('.react-app');
+            const root = ReactDOM.createRoot(container);
+
+            function clockify() {
+                time = dayjs().format('HH:mm:ss');
+                const div = (
+                    <div>
+                        <p>Today is {day}</p>
+                        <p>Current time: {time}</p>
+                        <button>Good job!</button>
+                        <p>My name is Peter Lustig<br />
+                            Cotton socks <br />Price $10<br />
+                            <button>Add to Cart</button>
+                            Product cost: ${productCost}<br />
+                            Shipping cost: ${shippingCost}<br />
+                            Total cost: ${productCost + shippingCost}</p>
+                        <button>Place your order</button>
+                    </div>
+                );
+                root.render(div);
+            }
+
+            setInterval(() => {clockify();}, 1000);
+
+        </script>
+    </body>
+</html>
