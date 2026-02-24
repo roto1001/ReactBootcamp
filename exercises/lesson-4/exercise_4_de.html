@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>React Basics</title>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                margin-left: 20px;
+            }
+            input {
+                padding: 5px;
+                font-size: 10px;
+                margin-bottom: 10px;
+                border-width: 1px;
+                border-radius: 5px;
+            }
+            .sign-up-button {
+                font-size: 10px;
+                font-family: Arial, Helvetica, sans-serif;
+                padding: 10px;
+                border: none;
+                color: white;
+                background-color: rgb(0, 123, 255);
+                border-radius: 5px;
+                cursor: pointer;
+                margin-left: 10px;
+                margin-top: 10px;
+            }
+            .login-button {
+                font-size: 10px;
+                font-family: Arial, Helvetica, sans-serif;
+                padding: 10px;
+                border: none;
+                color: white;
+                background-color: rgb(0, 123, 255);
+                border-radius: 5px;
+                cursor: pointer;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="js-container"></div>
+
+        <script src="https://unpkg.com/supersimpledev/react.js"></script>
+        <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+        <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+        <script type="text/babel">
+
+            function RegisterButtons() {
+                return (
+                    <>
+                        <button className="login-button" id="login-button">Login</button>
+                        <button className="sign-up-button" id="sign-up-button">Sign up</button>
+                    </>
+                );
+            }
+
+            function LoginForm() {
+                const [showPassword, setShowPassword] = React.useState(false);
+
+                function clickHandler() {
+                    setShowPassword(!showPassword);
+                }
+
+                return (
+                    <>
+                        <p>Hello, welcome to my website</p>
+                        <div>
+                            <input placeholder="Email"></input>
+                        </div>
+                        <div>
+                            <input type={showPassword ? 'text' : 'password'} placeholder="Password"></input>
+                            <button onClick={clickHandler}>{showPassword ? "Hide" : "Show"}</button>
+                        </div>
+                        <RegisterButtons />
+                    </>
+                );
+            }
+
+            function App() {
+                return (
+                    <>
+                        <LoginForm />
+                    </>
+                );
+            }
+
+            const container = document.querySelector('.js-container');
+            ReactDOM.createRoot(container).render(<App />);
+
+
+        </script>
+    </body>
+</html>
