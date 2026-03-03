@@ -1,0 +1,13 @@
+.chat-messages-container {
+    margin-top: 20px;
+    flex-grow: 1;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+.loadingSpinner {
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
