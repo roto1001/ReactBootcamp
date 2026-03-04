@@ -1,10 +1,12 @@
-import './header.css'
 import './TrackingPage.css'
+import { Header } from '../components/Header';
 
 export function TrackingPage() {
     return (
         <>
             <title>Tracking</title>
+            <Header />
+
             <div className="header">
                 <div className="left-section">
                     <a href="/" className="header-link">
