@@ -4,7 +4,7 @@ import './HomePage.css';
 export function HomePage() {
     return (
         <>
-            <body>
+            <title>Ecommerce-Project</title>
             <div className="header">
                 <div className="left-section">
                     <a href="index.html" className="header-link">
@@ -187,7 +187,6 @@ export function HomePage() {
                     </div>
                 </div>
             </div>
-            </body>
         </>
     );
 }
