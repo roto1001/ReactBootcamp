@@ -1,20 +1,22 @@
-import './TrackingPage.css'
+import { Link } from "react-router";
 import { Header } from '../components/Header';
+import './TrackingPage.css'
 
 export function TrackingPage() {
     return (
         <>
+            <link rel="icon" type="image/svg+xml+png" href="tracking-favicon.png" />
             <title>Tracking</title>
             <Header />
 
             <div className="header">
                 <div className="left-section">
-                    <a href="/" className="header-link">
+                    <Link to="/" className="header-link">
                         <img className="logo"
                              src="../public/images/logo-white.png"/>
                         <img className="mobile-logo"
                              src="../public/images/mobile-logo-white.png"/>
-                    </a>
+                    </Link>
                 </div>
 
                 <div className="middle-section">
@@ -26,24 +28,24 @@ export function TrackingPage() {
                 </div>
 
                 <div className="right-section">
-                    <a className="orders-link header-link" href="/orders">
+                    <Link className="orders-link header-link" to="/orders">
 
                         <span className="orders-text">Orders</span>
-                    </a>
+                    </Link>
 
-                    <a className="cart-link header-link" href="/checkout">
+                    <Link className="cart-link header-link" to="/checkout">
                         <img className="cart-icon" src="../public/images/icons/cart-icon.png"/>
                         <div className="cart-quantity">3</div>
                         <div className="cart-text">Cart</div>
-                    </a>
+                    </Link>
                 </div>
             </div>
 
             <div className="tracking-page">
                 <div className="order-tracking">
-                    <a className="back-to-orders-link link-primary" href="/orders">
+                    <Link className="back-to-orders-link link-primary" to="/orders">
                         View all orders
-                    </a>
+                    </Link>
 
                     <div className="delivery-date">
                         Arriving on Monday, June 13
